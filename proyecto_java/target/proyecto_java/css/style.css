@@ -1,0 +1,240 @@
+body{
+    background-color: rgb(240, 233, 219);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.carousel{
+    margin-bottom: 90px;
+}
+
+.carousel-item img {
+    height: 600px;
+    object-fit: cover; /* Esto garantiza que la imagen cubra completamente el contenedor */
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-caption{
+    font-size: 15px;
+    z-index: 1; /* Asegura que la descripción de la imagen esté delante del fondo */
+    color: whitesmoke;
+    padding: 50px; 
+}
+
+.carousel-caption p{
+    font-weight: lighter;
+}
+
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Ajusta el nivel de opacidad */
+}
+
+.busqueda{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.btn-beige {
+    color: rgb(12, 12, 12);
+    border: 1px solid rgb(156, 147, 117);
+    background-color:  #f1e8dc;
+}
+
+.btn-beige:hover{
+    background-color: rgba(0, 0, 0, 0.4); /* Ajusta el nivel de opacidad */
+}
+
+.fuente-busqueda{
+    color:black;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.fuente-nav-bar{
+    color: black;
+}
+
+.color-fondo{
+    background-color: rgb(240, 233, 219);
+}
+
+.checked{
+    color: orange;
+}
+
+.card-container{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr; /* Una sola columna para dispositivos móviles */
+    }
+}
+
+/* Media query para tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr); /* Dos columnas para tablets */
+    }
+}
+
+/* Media query para pantallas de escritorio */
+@media only screen and (min-width: 1025px) {
+    .card-container {
+        grid-template-columns: repeat(4, 1fr); /* Tres columnas para pantallas de escritorio */
+    }
+}
+
+.tamaño-img-card{
+    width: 286px;
+    height: 185px;
+}
+
+.card-body{
+    font-size: 15px;
+}
+
+.card-title{
+    font-size: 20px;
+    text-align: center;
+}
+
+.mision{
+    padding: 15px;
+    gap: 20px;
+    text-align: center;
+}
+
+.servicios{
+    margin-bottom: 70px;
+}
+
+.servicios .card{
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.servicios .card i{
+    font-size: 80px;
+    text-align: center;
+    color: black;
+    margin-top: 20px;
+}
+
+.card-body p{
+    text-align: center;
+}
+
+.servicio{ 
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.galeria{
+    margin-top: 30px;
+}
+
+.galeria .card{
+    width: 260px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    cursor: pointer;
+}
+
+.galeria .card img{
+    width: 260px;
+    height: 150px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.galeria .card img:hover{
+    transform: scale(1.1);
+}
+
+.footer{
+    width: 100%;
+    margin-top: 150px;
+    text-align: center;
+    background-color:  rgb(223, 211, 180);
+
+}
+
+.titulo-footer{
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.social-links i{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: black;
+    color:white;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.social-links i:hover{
+    background: rgb(223, 211, 180);
+    
+}
+
+.error input:not(.check,.boton),.error select{
+    border: 2px solid #ff0000;
+}
+
+.error-text{
+    color: #ff0000;
+    font-size: 0.8rem;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.gallery {
+    display: flex;
+    overflow-x: auto; /* Permitir desplazamiento horizontal */
+    gap: 10px;
+    padding: 10px;
+    scroll-snap-type: x mandatory; /* Hacer que cada imagen se detenga en el borde */
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en dispositivos iOS */
+}
+.gallery img {
+    width: 270px; /* Establece el ancho máximo al 100% del contenedor */
+    height: 200px;
+    flex: 0 0 auto; /* Evitar que las imágenes se redimensionen */
+    scroll-snap-align: start; /* Alinear cada imagen al inicio */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+
